@@ -8,18 +8,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" xintegrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         :root {
-            --background-color: #0c1014;  /* Darker background */
-            --text-color: #f0f4f8;      /* Lighter text */
-            --primary-color: #6e80fa;    /* Vibrant purple */
-            --code-background: #1a202c;  /* Darker code blocks */
+            --background-color: #0c1014;
+            --text-color: #f0f4f8;
+            --primary-color: #6e80fa;
+            --code-background: #1a202c;
             --code-border: #4a5568;
-            --sidebar-width: 260px;    /* Slightly wider sidebar */
-            --sidebar-background: #171923; /* Darker sidebar */
-            --sidebar-item-hover: #2d3748; /* Darker hover */
+            --sidebar-width: 260px;
+            --sidebar-background: #171923;
+            --sidebar-item-hover: #2d3748;
             --content-padding: 2rem;
-            --border-radius: 0.75rem; /* More rounded corners */
+            --border-radius: 0.75rem;
             --transition-duration: 0.3s;
-            --shadow-color: rgba(0, 0, 0, 0.5); /* Stronger shadow */
+            --shadow-color: rgba(0, 0, 0, 0.5);
         }
         body {
             font-family: 'Inter', Arial, sans-serif;
@@ -27,6 +27,8 @@
             color: var(--text-color);
             margin: 0;
             display: flex;
+            flex-direction: column; /* Changed to column for top ad */
+            align-items: center; /* Center everything horizontally */
         }
         body::before {
             content: "";
@@ -35,10 +37,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(270deg, #0c1014, #12182b, #1e293b, #2d3748); /* Darker gradient */
+            background: linear-gradient(270deg, #0c1014, #12182b, #1e293b, #2d3748);
             background-size: 400% 400%;
             animation: gradientAnimation 15s ease infinite;
-            opacity: 0.3; /* Slightly more opaque */
+            opacity: 0.3;
             z-index: -1;
         }
         @keyframes gradientAnimation {
@@ -53,124 +55,123 @@
             margin-bottom: 2rem;
             padding-left: var(--content-padding);
             padding-right: var(--content-padding);
-            position: fixed; /* Fix header to top */
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: var(--background-color); /* Header background */
+            background: var(--background-color);
             z-index: 1000;
-            box-shadow: 0 0.25rem 0.75rem var(--shadow-color); /* Add shadow */
+            box-shadow: 0 0.25rem 0.75rem var(--shadow-color);
+            box-sizing: border-box; /* Include padding in width */
         }
         .logo img {
-            height: 70px; /* Larger logo */
-            filter: drop-shadow(0 0 0.5rem var(--shadow-color)); 
+            height: 70px;
+            filter: drop-shadow(0 0 0.5rem var(--shadow-color));
             border-radius: 50%;
         }
         .social-links a {
             color: var(--text-color);
             text-decoration: none;
-            
             margin-right: 60px;
             font-weight: 600;
-            transition: color var(--transition-duration), transform var(--transition-duration); /* Add transform */
-            display: inline-flex; /* Use inline-flex for better alignment */
+            transition: color var(--transition-duration), transform var(--transition-duration);
+            display: inline-flex;
             align-items: center;
         }
         .social-links a:hover {
             color: var(--primary-color);
-            transform: translateY(-0.25rem); /* Slight lift on hover */
+            transform: translateY(-0.25rem);
         }
         .social-links a i {
-            margin-right: 0.5rem; /* Icon spacing */
-            font-size: 1.2rem; /* Larger icons */
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
         }
-
         h1, h2, h3 {
             color: var(--primary-color);
             font-weight: 700;
-            margin-bottom: 1.5rem; /* Increased heading margin */
-            text-shadow: 0 0.125rem 0.25rem var(--shadow-color); /* Heading shadow */
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0.125rem 0.25rem var(--shadow-color);
         }
         h1 {
-            font-size: 2.5rem; /* Larger heading */
+            font-size: 2.5rem;
         }
         h2 {
             font-size: 2rem;
         }
         h3 {
-            font-size: 1.5rem; /* Larger sub-heading */
+            font-size: 1.5rem;
         }
         p {
-            line-height: 1.8; /* Improved readability */
-            color: #e2e8f0;      /* Slightly lighter text */
+            line-height: 1.8;
+            color: #e2e8f0;
             margin-bottom: 1rem;
         }
         pre {
             background: var(--code-background);
             border: 1px solid var(--code-border);
-            padding: 1.75rem; /* Increased padding */
+            padding: 1.75rem;
             position: relative;
             overflow-x: auto;
             border-radius: var(--border-radius);
             margin-bottom: 1.5rem;
             font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-            font-size: 0.95rem; /* Slightly larger font */
-            line-height: 1.5;    /* Improved line height */
-            box-shadow: 0 0.25rem 0.75rem var(--shadow-color); /* Code block shadow */
+            font-size: 0.95rem;
+            line-height: 1.5;
+            box-shadow: 0 0.25rem 0.75rem var(--shadow-color);
         }
         code {
-            color: #f8fafc; /* Lighter code text */
+            color: #f8fafc;
         }
         .copy-btn {
             position: absolute;
-            top: 1.25rem; /* Slightly lower button */
-            right: 1.25rem; /* Slightly more right */
+            top: 1.25rem;
+            right: 1.25rem;
             background: var(--primary-color);
             color: white;
             border: none;
-            padding: 0.6rem 1.25rem; /* Slightly larger button */
+            padding: 0.6rem 1.25rem;
             cursor: pointer;
-            border-radius: 0.5rem; /* More rounded button */
-            transition: background-color var(--transition-duration), transform var(--transition-duration); /* Added transform */
+            border-radius: 0.5rem;
+            transition: background-color var(--transition-duration), transform var(--transition-duration);
             font-weight: 600;
             font-size: 0.9rem;
-            box-shadow: 0 0.25rem 0.5rem var(--shadow-color); /* Slightly stronger shadow */
+            box-shadow: 0 0.25rem 0.5rem var(--shadow-color);
         }
         .copy-btn:hover {
             background: #8092f7;
-            transform: translateY(-0.125rem); /* Slight lift on hover */
+            transform: translateY(-0.125rem);
         }
         .copy-btn:active {
             background: #5661b3;
-            box-shadow: 0 0.125rem 0.25rem var(--shadow-color); /* Smaller shadow on active */
+            box-shadow: 0 0.125rem 0.25rem var(--shadow-color);
             transform: translateY(0);
         }
         a {
-            color: #93c5fd; /* Lighter link color */
+            color: #93c5fd;
             text-decoration: none;
             transition: color var(--transition-duration);
         }
         a:hover {
-            color: #c3e8fb; /* Lighter hover color */
+            color: #c3e8fb;
         }
         .notification {
             position: fixed;
-            bottom: 2.5rem; /* Slightly higher notification */
+            bottom: 2.5rem;
             left: 50%;
             transform: translateX(-50%);
             background-color: #48bb78;
             color: white;
-            padding: 0.8rem 1.75rem; /* Slightly larger notification */
-            border-radius: 0.5rem; /* More rounded notification */
+            padding: 0.8rem 1.75rem;
+            border-radius: 0.5rem;
             opacity: 0;
             transition: opacity var(--transition-duration), transform var(--transition-duration);
             z-index: 1000;
             font-weight: 600;
-            box-shadow: 0 0.25rem 0.75rem var(--shadow-color); /* Notification shadow */
+            box-shadow: 0 0.25rem 0.75rem var(--shadow-color);
         }
         .notification.show {
             opacity: 1;
-            transform: translateX(-50%) translateY(-0.5rem); /* Slight lift */
+            transform: translateX(-50%) translateY(-0.5rem);
         }
         .notification.hide {
             opacity: 0;
@@ -181,19 +182,19 @@
             background: var(--sidebar-background);
             height: 100vh;
             position: fixed;
-            top: 0;
+            top: 8rem; /* Adjusted top to account for top ad and header */
             left: 0;
-            padding: 3rem 0; /* Increased sidebar padding */
-            box-shadow: 0 0.25rem 0.75rem var(--shadow-color); /* Sidebar shadow */
+            padding: 3rem 0;
+            box-shadow: 0 0.25rem 0.75rem var(--shadow-color);
             z-index: 100;
             overflow-y: auto;
         }
         #sidebar h2 {
-            padding-left: 1.75rem; /* Increased heading padding */
-            margin-bottom: 2rem; /* Increased heading margin */
+            padding-left: 1.75rem;
+            margin-bottom: 2rem;
             color: var(--text-color);
             font-size: 1.5rem;
-            text-shadow: 0 0.125rem 0.25rem var(--shadow-color); /* Sidebar heading shadow */
+            text-shadow: 0 0.125rem 0.25rem var(--shadow-color);
         }
         #sidebar ul {
             list-style: none;
@@ -201,48 +202,63 @@
             margin: 0;
         }
         #sidebar li {
-            padding: 0.8rem 1.75rem; /* Increased list item padding */
+            padding: 0.8rem 1.75rem;
             cursor: pointer;
-            transition: background-color var(--transition-duration), border-left-color var(--transition-duration), transform var(--transition-duration); /* Added transform */
-            border-left: 0.375rem solid transparent; /* Increased border width */
+            transition: background-color var(--transition-duration), border-left-color var(--transition-duration), transform var(--transition-duration);
+            border-left: 0.375rem solid transparent;
             font-weight: 500;
-            border-radius: 0.375rem; /* Add border radius to sidebar items */
+            border-radius: 0.375rem;
         }
         #sidebar li:hover {
             background-color: var(--sidebar-item-hover);
             border-left-color: var(--primary-color);
-            transform: translateX(0.25rem); /* Slight horizontal shift on hover */
+            transform: translateX(0.25rem);
         }
         #sidebar li.active {
             background-color: var(--sidebar-item-hover);
             border-left-color: var(--primary-color);
             font-weight: 600;
-            box-shadow: 0 0.125rem 0.25rem var(--shadow-color); /* Active item shadow */
+            box-shadow: 0 0.125rem 0.25rem var(--shadow-color);
         }
         #content {
             margin-left: var(--sidebar-width);
             padding: var(--content-padding);
             flex-grow: 1;
+            margin-top: 8rem; /* Adjusted top margin to account for fixed header and ad */
+            box-sizing: border-box; /* Include padding and margin in width */
         }
         .section {
             display: none;
             border-radius: var(--border-radius);
-            /* background: rgba(255, 255, 255, 0.05);  Removed background from section */
-            /* backdrop-filter: blur(10px);  Removed backdrop filter */
         }
         .section.active {
             display: block;
         }
+        #top-ad-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem; /* Add space below the ad */
+            z-index: 999; /* Ensure ad is below header */
+            margin-top: 8rem; /*make space for header*/
+        }
+        #bottom-ad-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem; /* Add space above the ad */
+            z-index: 999;
+        }
 
         @media (max-width: 768px) {
             body {
-                padding-top: 7rem; /* Make space for fixed header */
+                padding-top: 12rem; /* Adjusted padding-top for mobile */
             }
             #sidebar {
                 width: 100%;
                 height: auto;
                 position: fixed;
-                top: 0;
+                top: 8rem; /* Adjusted top to account for top ad and header */
                 left: 0;
                 padding: 1.5rem 0;
                 box-shadow: 0 0.25rem 0.75rem var(--shadow-color);
@@ -277,6 +293,7 @@
             #content {
                 margin-left: 0;
                 padding: 1rem;
+                margin-top: 12rem; /* Adjusted top margin for mobile */
             }
             .header {
                 position: fixed;
@@ -287,15 +304,20 @@
                 z-index: 1000;
                 padding: 1rem;
                 box-shadow: 0 0.25rem 0.75rem var(--shadow-color);
+                box-sizing: border-box;
             }
-            .logo img{
+            .logo img {
                 height: 60px;
             }
-            #youtube {
-                transition: .3s;
+            .social-links a {
+                margin-left: 1rem;
+            }
+            #top-ad-container {
+                margin-top: 7rem;
             }
         }
     </style>
+    <script type='text/javascript' src='//toiletaudacity.com/89/a1/c6/89a1c6358235c68e9117b4bced39b026.js'></script>
 </head>
 <body>
     <header class="header">
@@ -307,6 +329,20 @@
             <a href="https://discord.com/invite/Vwk8Sksfuz" target="_blank"><i class="fab fa-discord"></i>Discord</a>
         </nav>
     </header>
+
+    <div id="top-ad-container">
+        <script type="text/javascript">
+            atOptions = {
+                'key': '4f77f42ada70b0c71f678eccbf51e630',
+                'format': 'iframe',
+                'height': 90,
+                'width': 728,
+                'params': {}
+            };
+        </script>
+        <script type="text/javascript" src="//toiletaudacity.com/4f77f42ada70b0c71f678eccbf51e630/invoke.js"></script>
+    </div>
+
     <div id="sidebar">
         <h2>Installation Guides</h2>
         <ul>
@@ -315,6 +351,7 @@
             <li data-section="dashboard">Dashboard Installation</li>
         </ul>
     </div>
+
     <div id="content">
         <div id="panel" class="section active">
             <h1>🚀 Panel Installation</h1>
@@ -323,10 +360,15 @@
             <pre><code id="code2">curl -sL https://deb.nodesource.com/setup_23.x | sudo bash -</code><button class="copy-btn" onclick="copyCode('code2')">Copy</button></pre>
             <pre><code id="code3">apt-get install nodejs git</code><button class="copy-btn" onclick="copyCode('code3')">Copy</button></pre>
             <pre><code id="code4">cd v2panel</code><button class="copy-btn" onclick="copyCode('code4')">Copy</button></pre>
+            <div id="inline-ad-container">
+                <script async="async" data-cfasync="false" src="//toiletaudacity.com/bd0c1e6e9609d5706cf1c7954f15546b/invoke.js"></script>
+                <div id="container-bd0c1e6e9609d5706cf1c7954f15546b"></div>
+            </div>
             <pre><code id="code5">apt install zip -y && unzip panel.zip && cd panel</code><button class="copy-btn" onclick="copyCode('code5')">Copy</button></pre>
             <pre><code id="code6">npm install && npm run seed && npm run createUser</code><button class="copy-btn" onclick="copyCode('code6')">Copy</button></pre>
             <pre><code id="code7">node .</code><button class="copy-btn" onclick="copyCode('code7')">Copy</button></pre>
         </div>
+
         <div id="daemon" class="section">
             <h1>🚀 Daemon / Wings Installation</h1>
             <p>Follow these steps to install the Daemon / Wings:</p>
@@ -335,6 +377,7 @@
             <pre><code id="code10">npm install</code><button class="copy-btn" onclick="copyCode('code10')">Copy</button></pre>
             <pre><code id="code11">node .</code><button class="copy-btn" onclick="copyCode('code11')">Copy</button></pre>
         </div>
+
         <div id="dashboard" class="section">
             <h1>🚀 Dashboard Installation</h1>
             <p>Follow these steps to install the Dashboard:</p>
@@ -345,8 +388,22 @@
             <pre><code id="code16">nano .env</code><button class="copy-btn" onclick="copyCode('code16')">Copy</button></pre>
             <pre><code id="code17">node .</code><button class="copy-btn" onclick="copyCode('code17')">Copy</button></pre>
         </div>
+        <div id="bottom-ad-container">
+            <script type="text/javascript">
+                atOptions = {
+                    'key': '4f77f42ada70b0c71f678eccbf51e630',
+                    'format': 'iframe',
+                    'height': 90,
+                    'width': 728,
+                    'params': {}
+                };
+            </script>
+            <script type="text/javascript" src="//toiletaudacity.com/4f77f42ada70b0c71f678eccbf51e630/invoke.js"></script>
+        </div>
         <div id="copiedNotification" class="notification">Copied!</div>
     </div>
+
+    <script type="text/javascript" src="//toiletaudacity.com/15/c7/1f/15c71ff69169279f611ed61a9854e844.js"></script>
     <script>
         function copyCode(id) {
             const text = document.getElementById(id).textContent;
